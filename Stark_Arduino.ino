@@ -14,7 +14,7 @@ void setup() {
 }
 
 void loop() {
-  if(ldr()<=300){
+  if(ldr()<=450){
    checkultrasonic();
    if (distance<30){
     trigled();
@@ -32,7 +32,7 @@ void loop() {
 
 void trigled(){
   start:
-  if(ldr()<=300)
+  if(ldr()<=450)
   {
   count++;
   analogWrite(led1, 255);
@@ -41,25 +41,25 @@ void trigled(){
   analogWrite(led4, 255);
   delay(2000); 
   checkultrasonic();
-  if (distance<30 || ldr()>300){
+  if (distance<30 || ldr()>450){
     goto start;
   } 
   digitalWrite(led1, LOW);
   delay(2000);
   checkultrasonic();
-  if (distance<30 || ldr()>300){
+  if (distance<30 || ldr()>450){
     goto start;
   }
   digitalWrite(led2, LOW);
   delay(2000);
   checkultrasonic();
-  if (distance<30 || ldr()>300){ 
+  if (distance<30 || ldr()>450){ 
     goto start;
   }
   digitalWrite(led3, LOW);
   delay(2000);
   checkultrasonic();
-  if (distance<30 || ldr()>300){
+  if (distance<30 || ldr()>450){
     goto start;
   }
   digitalWrite(led4, LOW);
