@@ -1,0 +1,6 @@
+MAILGUN_API_KEY = 'Mailgun account API key' 
+SANDBOX_URL= 'Your Sandox URL from Mailgun ' 
+SENDER_EMAIL = 'test@Your_Sandbox_URL '
+RECIPIENT_EMAIL = 'Your email id '
+API_KEY = 'Bolt Cloud API '
+DEVICE_ID = 'Your Bolt IOT ID '

@@ -1,6 +1,0 @@
-MAILGUN_API_KEY = ' ' 
-SANDBOX_URL= ' ' 
-SENDER_EMAIL = ' '
-RECIPIENT_EMAIL = ' '
-API_KEY = ' '
-DEVICE_ID = ' '
