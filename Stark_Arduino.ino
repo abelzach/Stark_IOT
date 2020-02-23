@@ -1,5 +1,7 @@
 const int trigger = 7, echo = 6, led1 = 5, led2 = 4, led3 = 3, led4 = 2, ldrpin = A0;
 long duration, distance;
+int count=0;
+int f=0;
 void setup() {
    pinMode(echo, INPUT);  
    pinMode(ldrpin, INPUT); 
@@ -16,9 +18,15 @@ void loop() {
    checkultrasonic();
    if (distance<30){
     trigled();
+    f=1;
    }
-   Serial.println();
    delay(100);
+  }
+  else if (f==1){
+    Serial.println(count);
+    delay(20000 );
+    count=0;
+    
   }
 }
 
@@ -26,6 +34,7 @@ void trigled(){
   start:
   if(ldr()<=300)
   {
+  count++;
   analogWrite(led1, 255);
   analogWrite(led2, 255);
   analogWrite(led3, 255);
@@ -59,8 +68,7 @@ void trigled(){
    digitalWrite(led1, LOW); 
    digitalWrite(led2, LOW);
    digitalWrite(led3, LOW);
-   digitalWrite(led4, LOW);
-  }
+   digitalWrite(led4, LOW);  }
 }
 void checkultrasonic(){
      digitalWrite(trigger, LOW);
